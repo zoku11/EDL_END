@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.36105.23 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTextFile", "BasicTextFile\BasicTextFile.csproj", "{DC652354-FD33-40C7-9184-CE7603249833}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingWithStreamWriter", "LoggingWithStreamWriter\LoggingWithStreamWriter.csproj", "{4B4341B8-15F2-4A0C-B4D4-630A765A071F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DC652354-FD33-40C7-9184-CE7603249833}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC652354-FD33-40C7-9184-CE7603249833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC652354-FD33-40C7-9184-CE7603249833}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4341B8-15F2-4A0C-B4D4-630A765A071F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4341B8-15F2-4A0C-B4D4-630A765A071F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4341B8-15F2-4A0C-B4D4-630A765A071F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4341B8-15F2-4A0C-B4D4-630A765A071F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

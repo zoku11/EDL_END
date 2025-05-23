@@ -2,73 +2,84 @@
 
 var textFile = new SimpleTextFile("data.txt");
 var lines = textFile.ReadLines();
-var opc = "0";
 
-do
+using (var logger = new LogWriter("log.txt"))
 {
-    opc = Menu();
-    Console.WriteLine("=======================================");
-    switch (opc)
+    var opc = "0";
+    logger.WriteLog("INFO", "Application started.");
+    do
     {
-        case "1":
-            if (lines.Length == 0)
-            {
-                Console.WriteLine("Empty file.");
-                break;
-            }
-            foreach (var line in lines)
-            {
-                Console.WriteLine(line);
-            }
-            break;
-
-        case "2":
-            Console.Write("Enter the line to add: ");
-            var newLine = Console.ReadLine();
-            if (!string.IsNullOrEmpty(newLine))
-            {
-                lines = lines.Append(newLine).ToArray();
-            }
-            break;
-
-        case "3":
-            Console.Write("Enter the line to update: ");
-            var lineToUpdate = Console.ReadLine();
-            Console.Write("Enter the new value: ");
-            var newValue = Console.ReadLine();
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if (lines[i] == lineToUpdate)
+        opc = Menu();
+        Console.WriteLine("=======================================");
+        switch (opc)
+        {
+            case "1":
+                logger.WriteLog("INFO", "Show content.");
+                if (lines.Length == 0)
                 {
-                    lines[i] = newValue!;
+                    Console.WriteLine("Empty file.");
+                    logger.WriteLog("ERROR", "Empty file.");
                     break;
                 }
-            }
-            break;
+                foreach (var line in lines)
+                {
+                    Console.WriteLine(line);
+                }
+                break;
 
-        case "4":
-            Console.Write("Enter the line to remove: ");
-            var lineToRemove = Console.ReadLine();
-            if (!string.IsNullOrEmpty(lineToRemove))
-            {
-                lines = lines.Where(line => line != lineToRemove).ToArray();
-            }
-            break;
+            case "2":
+                logger.WriteLog("INFO", "Add line.");
+                Console.Write("Enter the line to add: ");
+                var newLine = Console.ReadLine();
+                if (!string.IsNullOrEmpty(newLine))
+                {
+                    lines = lines.Append(newLine).ToArray();
+                }
+                break;
 
-        case "5":
-            SaveChanges();
-            break;
+            case "3":
+                logger.WriteLog("INFO", "Update line.");
+                Console.Write("Enter the line to update: ");
+                var lineToUpdate = Console.ReadLine();
+                Console.Write("Enter the new value: ");
+                var newValue = Console.ReadLine();
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (lines[i] == lineToUpdate)
+                    {
+                        lines[i] = newValue!;
+                        break;
+                    }
+                }
+                break;
 
-        case "0":
-            Console.WriteLine("Exiting...");
-            break;
+            case "4":
+                logger.WriteLog("INFO", "Remove line.");
+                Console.Write("Enter the line to remove: ");
+                var lineToRemove = Console.ReadLine();
+                if (!string.IsNullOrEmpty(lineToRemove))
+                {
+                    lines = lines.Where(line => line != lineToRemove).ToArray();
+                }
+                break;
 
-        default:
-            Console.WriteLine("Invalid option. Please try again.");
-            break;
-    }
-} while (opc != "0");
-SaveChanges();
+            case "5":
+                SaveChanges();
+                logger.WriteLog("INFO", "Save file.");
+                break;
+
+            case "0":
+                Console.WriteLine("Exiting...");
+                break;
+
+            default:
+                Console.WriteLine("Invalid option. Please try again.");
+                break;
+        }
+    } while (opc != "0");
+    logger.WriteLog("INFO", "Application ended.");
+    SaveChanges();
+}
 
 void SaveChanges()
 {
