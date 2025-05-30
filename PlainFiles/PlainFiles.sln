@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingWithStreamWriter", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVSWithoutLibraries", "CVSWithoutLibraries\CVSWithoutLibraries.csproj", "{B318E315-E61A-45B5-A29F-4760D6B9B39F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CVSWithLibary", "CVSWithLibary\CVSWithLibary.csproj", "{3A1232C5-9495-4A22-ADC4-20BF08D3C722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B318E315-E61A-45B5-A29F-4760D6B9B39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B318E315-E61A-45B5-A29F-4760D6B9B39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B318E315-E61A-45B5-A29F-4760D6B9B39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A1232C5-9495-4A22-ADC4-20BF08D3C722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A1232C5-9495-4A22-ADC4-20BF08D3C722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A1232C5-9495-4A22-ADC4-20BF08D3C722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A1232C5-9495-4A22-ADC4-20BF08D3C722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
